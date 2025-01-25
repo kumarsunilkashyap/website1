@@ -7,6 +7,8 @@ import Contact from "./Pages/Contact";
 import ErrorPage from "./Pages/Error";
 import Services from "./Pages/Service";
 import Project from "./Pages/Project";
+import Policy from "./Pages/Policy";
+import TermsOfService from "./Pages/Termsofservice";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +39,14 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element: <Contact />,
+      },
+      {
+        path: "policy",
+        element: <Policy />,
+      },
+      {
+        path: "termofservice",
+        element: <TermsOfService />,
       },
     ],
   },
