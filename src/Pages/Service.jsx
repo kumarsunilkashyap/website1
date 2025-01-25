@@ -19,6 +19,24 @@ const services = [
       "We design user-friendly interfaces with a focus on user experience.",
     icon: "🎨",
   },
+  {
+    title: "SEO Optimization",
+    description:
+      "Improve your website's visibility on search engines with our SEO services.",
+    icon: "🔍",
+  },
+  {
+    title: "Cloud Services",
+    description:
+      "We offer cloud solutions to help you scale your business efficiently.",
+    icon: "☁️",
+  },
+  {
+    title: "E-commerce Solutions",
+    description:
+      "Our team builds robust e-commerce platforms to help you sell online.",
+    icon: "🛒",
+  },
 ];
 
 const Service = () => {

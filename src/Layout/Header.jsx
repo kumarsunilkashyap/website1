@@ -86,6 +86,16 @@ const Header = () => {
                 Services
               </NavLink>
             </li>
+
+            <li className="mt-3 lg:mt-0">
+              <NavLink
+                to="/project"
+                className="block px-3 py-2 rounded hover:bg-gray-700"
+                activeClassName="bg-gray-700"
+              >
+                Projects
+              </NavLink>
+            </li>
             <li className="mt-3 lg:mt-0">
               <NavLink
                 to="/contact"
