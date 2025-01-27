@@ -98,6 +98,16 @@ const Header = () => {
             </li>
             <li className="mt-3 lg:mt-0">
               <NavLink
+                to="/gallery"
+                className="block px-3 py-2 rounded hover:bg-gray-700"
+                activeClassName="bg-gray-700"
+              >
+                Gallery
+              </NavLink>
+            </li>
+
+            <li className="mt-3 lg:mt-0">
+              <NavLink
                 to="/contact"
                 className="block px-3 py-2 rounded hover:bg-gray-700"
                 activeClassName="bg-gray-700"

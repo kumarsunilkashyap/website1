@@ -9,6 +9,7 @@ import Services from "./Pages/Service";
 import Project from "./Pages/Project";
 import Policy from "./Pages/Policy";
 import TermsOfService from "./Pages/Termsofservice";
+import Gallery from "./Pages/Gallery";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: "termofservice",
         element: <TermsOfService />,
+      },
+      {
+        path: "gallery",
+        element: <Gallery />,
       },
     ],
   },
