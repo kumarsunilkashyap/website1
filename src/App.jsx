@@ -13,12 +13,12 @@ import Gallery from "./Pages/Gallery";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "",
     element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/",
+        path: "",
         element: <Home />,
       },
       {
