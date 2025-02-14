@@ -9,7 +9,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-gray-800 text-white  fixed top-0 left-0 w-full z-10">
+    <header className="bg-gray-800 text-white fixed top-0 left-0 w-full z-10">
       <div className="container mx-auto flex justify-between items-center p-5">
         <div className="text-xl font-bold">
           <NavLink to="/">Sunil Kumar</NavLink>
@@ -53,7 +53,7 @@ const Header = () => {
           </button>
         </div>
         <nav
-          className={`lg:flex lg:items-center  absolute lg:static top-full left-0 w-full lg:w-auto bg-gray-800 lg:bg-transparent ${
+          className={`lg:flex lg:items-center absolute lg:static top-full left-0 w-full lg:w-auto bg-gray-800 lg:bg-transparent ${
             isOpen ? "block" : "hidden"
           }`}
         >
@@ -86,7 +86,6 @@ const Header = () => {
                 Services
               </NavLink>
             </li>
-
             <li className="mt-3 lg:mt-0">
               <NavLink
                 to="/project"
@@ -96,14 +95,34 @@ const Header = () => {
                 Projects
               </NavLink>
             </li>
-            <li className="mt-3 lg:mt-0">
+            <li className="relative group mt-3 lg:mt-0 list-none">
               <NavLink
-                to="/gallery"
-                className="block px-3 py-2 rounded hover:bg-gray-700"
-                activeClassName="bg-gray-700"
+                to="/services"
+                className="block px-3 py-2 rounded hover:bg-gray-700 focus:outline-none transition duration-300"
               >
-                Gallery
+                Services
               </NavLink>
+              
+              <div className="absolute hidden group-hover:block bg-gray-800 shadow-lg pt-2">
+                <NavLink
+                  to="/service1"
+                  className="block px-4 py-2 text-white hover:bg-gray-700"
+                >
+                  Service 1
+                </NavLink>
+                <NavLink
+                  to="/service2"
+                  className="block px-4 py-2 text-white hover:bg-gray-700"
+                >
+                  Service 2
+                </NavLink>
+                <NavLink
+                  to="/service3"
+                  className="block px-4 py-2 text-white hover:bg-gray-700"
+                >
+                  Service 3
+                </NavLink>
+              </div>
             </li>
 
             <li className="mt-3 lg:mt-0">

@@ -24,18 +24,18 @@ const Gallery = () => {
   return (
     <div className="min-h-screen p-20 container mx-auto">
       <h1 className="text-3xl font-bold text-center p-10">Photo Gallery</h1>
-      <div className="grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-5 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-5 gap-4">
         {photos.map((photo) => (
           <div
             key={photo.id}
-            className="relative border rounded-4xl p-2  overflow-hidden"
+            className="relative border rounded-lg overflow-hidden shadow-lg transform transition duration-500 hover:scale-105"
           >
             <img
               src={photo.image}
               alt={photo.alt_description}
-              className="w-full h-auto rounded shadow-lg"
+              className="w-full h-full object-cover p-5"
             />
-            <div className="absolute bottom-0 left-0 bg-gray-500 bg-opacity-50 text-white p-2 rounded-b w-full text-center">
+            <div className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-2 w-full text-center">
               {photo.title}
             </div>
           </div>
