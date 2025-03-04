@@ -2,15 +2,15 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const Country = () => {
-  const [country, setCountry] = useState(null);
+  const [countries, setCountries] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     axios
-      .get("https://restcountries.com/v3.1/name/usa")
+      .get("https://restcountries.com/v3.1/all")
       .then((response) => {
-        setCountry(response.data[0]);
+        setCountries(response.data);
         setLoading(false);
       })
       .catch((error) => {
@@ -19,34 +19,26 @@ const Country = () => {
       });
   }, []);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
+  if (loading) return <div className="text-center mt-10">Loading...</div>;
+  if (error)
+    return <div className="text-center mt-10">Error fetching data</div>;
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
-        <h1 className="text-2xl font-bold mb-4">{country.name.common}</h1>
-        <p className="text-gray-700 mb-4">Capital: {country.capital[0]}</p>
-        <p className="text-gray-700 mb-4">
-          Population: {country.population.toLocaleString()}
-        </p>
-        <p className="text-gray-700 mb-4">Region: {country.region}</p>
-        <p className="text-gray-700 mb-4">Subregion: {country.subregion}</p>
-        <p className="text-gray-700 mb-4">
-          Currency: {Object.values(country.currencies)[0].name}
-        </p>
-        <p className="text-gray-700 mb-4">
-          Language: {Object.values(country.languages).join(", ")}
-        </p>
-        <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-          Learn More
-        </button>
-      </div>
+    <div className="container mx-auto p-25">
+      <h1 className="text-4xl font-bold mb-4 text-center">Country List</h1>
+      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {countries.map((country) => (
+          <li
+            key={country.cca3}
+            className="p-4 border rounded shadow hover:bg-gray-100 transition"
+          >
+            <h2 className="font-bold">{country.name.common}</h2>
+            <p>Capital: {country.capital ? country.capital[0] : "N/A"}</p>
+            <p>Region: {country.region}</p>
+            <p>Population: {country.population.toLocaleString()}</p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

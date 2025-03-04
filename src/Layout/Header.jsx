@@ -108,7 +108,7 @@ const Header = () => {
                   to="country"
                   className="block px-4 py-2 text-white hover:bg-gray-700"
                 >
-                  Country Name
+                  Country
                 </NavLink>
                 <NavLink
                   to="gallery"

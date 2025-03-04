@@ -3,36 +3,43 @@ import axios from "axios";
 
 const StateList = () => {
   const [states, setStates] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Replace with your new API endpoint
     axios
-      .get("https://api.newexample.com/states")
+      .get("https://api.sampleapis.com/usa/states")
       .then((response) => {
-        console.log(response.data);
         setStates(response.data);
+        setLoading(false);
       })
       .catch((error) => {
-        console.error("There was an error fetching the states!", error);
+        setError(error);
+        setLoading(false);
       });
   }, []);
 
+  if (loading) return <div className="text-center mt-10">Loading...</div>;
+  if (error)
+    return <div className="text-center mt-10">Error fetching data</div>;
+
   return (
-    <div className="state-list">
-      {states.map((state) => (
-        <div key={state.id} className="state-card">
-          <h2>{state.name}</h2>
-          <p>
-            <strong>Language:</strong> {state.language}
-          </p>
-          <p>
-            <strong>Currency:</strong> {state.currency}
-          </p>
-          <p>
-            <strong>Capital:</strong> {state.capital}
-          </p>
-        </div>
-      ))}
+    <div className="container mx-auto p-25">
+      <h1 className="text-4xl font-bold mb-4 text-center">State List</h1>
+      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {states.map((state) => (
+          <li
+            key={state.id}
+            className="p-4 border rounded shadow hover:bg-gray-100 transition"
+          >
+            <h2 className="font-bold">{state.name}</h2>
+            <p>Abbreviation: {state.abbreviation}</p>
+            <p>Capital: {state.capital}</p>
+            <p>Population: {state.population.toLocaleString()}</p>
+            <p>Area: {state.area.toLocaleString()} sq mi</p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
