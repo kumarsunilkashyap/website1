@@ -60,7 +60,7 @@ const Header = () => {
           <ul className="lg:flex lg:space-x-4">
             <li className="mt-3 lg:mt-0">
               <NavLink
-                to="/"
+                to=""
                 className="block px-3 py-2 rounded hover:bg-gray-700"
                 activeClassName="bg-gray-700"
                 exact
@@ -70,7 +70,7 @@ const Header = () => {
             </li>
             <li className="mt-3 lg:mt-0">
               <NavLink
-                to="/about"
+                to="about"
                 className="block px-3 py-2 rounded hover:bg-gray-700"
                 activeClassName="bg-gray-700"
               >
@@ -79,7 +79,7 @@ const Header = () => {
             </li>
             <li className="mt-3 lg:mt-0">
               <NavLink
-                to="/services"
+                to="services"
                 className="block px-3 py-2 rounded hover:bg-gray-700"
                 activeClassName="bg-gray-700"
               >
@@ -88,7 +88,7 @@ const Header = () => {
             </li>
             <li className="mt-3 lg:mt-0">
               <NavLink
-                to="/project"
+                to="project"
                 className="block px-3 py-2 rounded hover:bg-gray-700"
                 activeClassName="bg-gray-700"
               >
@@ -97,37 +97,43 @@ const Header = () => {
             </li>
             <li className="relative group mt-3 lg:mt-0 list-none">
               <NavLink
-                to="/services"
+                to="services"
                 className="block px-3 py-2 rounded hover:bg-gray-700 focus:outline-none transition duration-300"
               >
-                Services
+                Other Services
               </NavLink>
-              
+
               <div className="absolute hidden group-hover:block bg-gray-800 shadow-lg pt-2">
                 <NavLink
-                  to="/service1"
+                  to="country"
                   className="block px-4 py-2 text-white hover:bg-gray-700"
                 >
-                  Service 1
+                  Country Name
                 </NavLink>
                 <NavLink
-                  to="/service2"
+                  to="gallery"
                   className="block px-4 py-2 text-white hover:bg-gray-700"
                 >
-                  Service 2
+                  Gallery
                 </NavLink>
                 <NavLink
-                  to="/service3"
+                  to="statelist"
                   className="block px-4 py-2 text-white hover:bg-gray-700"
                 >
-                  Service 3
+                  Sate List
+                </NavLink>
+                <NavLink
+                  to="calculator"
+                  className="block px-4 py-2 text-white hover:bg-gray-700"
+                >
+                  Calculator
                 </NavLink>
               </div>
             </li>
 
             <li className="mt-3 lg:mt-0">
               <NavLink
-                to="/contact"
+                to="contact"
                 className="block px-3 py-2 rounded hover:bg-gray-700"
                 activeClassName="bg-gray-700"
               >
